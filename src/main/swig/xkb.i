@@ -1,0 +1,8 @@
+// FIX: use unsigned values to prevent compile error
+typedef enum xcb_xkb_control_t {
+    XCB_XKB_CONTROL_GROUPS_WRAP = 0x08000000,
+    XCB_XKB_CONTROL_INTERNAL_MODS = 0x10000000,
+    XCB_XKB_CONTROL_IGNORE_LOCK_MODS = 0x20000000,
+    XCB_XKB_CONTROL_PER_KEY_REPEAT = 0x40000000,
+    XCB_XKB_CONTROL_CONTROLS_ENABLED = 0x80000000
+} xcb_xkb_control_t;

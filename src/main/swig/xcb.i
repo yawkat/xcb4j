@@ -20,6 +20,7 @@ SWIG_JAVABODY_TYPEWRAPPER(public, public, public, SWIGTYPE);
 %include "xcb_generic_error_t.i";
 %include "equals_hash_java.i";
 %include "custom_xcb.i";
+%include "xkb.i";
 //TODO somewhere a pointer-pointer of xcb_screen_t is used. handle this.
 
 %{
@@ -36,6 +37,12 @@ SWIG_JAVABODY_TYPEWRAPPER(public, public, public, SWIGTYPE);
 #include <xcb/render.h>
 #include <xcb/xcb_atom.h>
 #include <xcb/xcb_ewmh.h>
+#include <xcb/xkb.h>
+#include <xkbcommon/xkbcommon.h>
+#include <xkbcommon/xkbcommon-compat.h>
+#include <xkbcommon/xkbcommon-keysyms.h>
+#include <xkbcommon/xkbcommon-names.h>
+#include <xkbcommon/xkbcommon-x11.h>
 %}
 
 %apply char **STRING_ARRAY {char **host};
@@ -48,6 +55,7 @@ extern xcb_extension_t xcb_render_id;
 extern xcb_extension_t xcb_composite_id;
 extern xcb_extension_t xcb_shape_id;
 extern xcb_extension_t xcb_sync_id;
+extern xcb_extension_t xcb_xkb_id;
 %mutable;
 
 %include "/usr/include/xcb/xcb.h";
@@ -64,3 +72,9 @@ extern xcb_extension_t xcb_sync_id;
 %include "/usr/include/xcb/render.h";
 %include "/usr/include/xcb/xcb_atom.h";
 %include "/usr/include/xcb/xcb_ewmh.h";
+%include "/usr/include/xcb/xkb.h";
+%include "/usr/include/xkbcommon/xkbcommon.h";
+%include "/usr/include/xkbcommon/xkbcommon-compat.h";
+%include "/usr/include/xkbcommon/xkbcommon-keysyms.h";
+%include "/usr/include/xkbcommon/xkbcommon-names.h";
+%include "/usr/include/xkbcommon/xkbcommon-x11.h";
